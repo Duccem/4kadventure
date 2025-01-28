@@ -1,0 +1,22 @@
+{
+  "extends": "@4k/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "paths": {
+      "@4k/*": [
+        "../*"
+      ],
+      "@4k/ui/*": [
+        "./*"
+      ]
+    },
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

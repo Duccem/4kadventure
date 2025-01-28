@@ -1,5 +1,5 @@
 {
-  "name": "4kadventure",
+  "name": "4k",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -17,7 +17,7 @@
   },
   "packageManager": "npm@10.2.3",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "src/packages/*",
+    "src/apps/*"
   ]
 }
