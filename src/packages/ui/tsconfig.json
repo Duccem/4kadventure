@@ -1,15 +1,21 @@
 {
   "extends": "@4k/typescript-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
       "@4k/*": [
         "../*"
       ],
-      "@4k/ui/*": [
+      "@4k/design-system/*": [
         "./*"
       ]
     },
+    "jsx": "react-jsx"
   },
   "include": [
     "./**/*.ts",
