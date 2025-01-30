@@ -16,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${nunito.className} antialiased`} suppressHydrationWarning>
-        {children}
+        <div className="min-h-screen bg-background overflow-hidden md:overflow-visible relative">
+          {children}
+        </div>
       </body>
     </html>
   );
