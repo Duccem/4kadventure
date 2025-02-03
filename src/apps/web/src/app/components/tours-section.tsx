@@ -1,35 +1,17 @@
+"use client";
 import { getTours } from "@/src/api/tour";
 import { MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
-const cards = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1584555613497-9ecf9dd06f68",
-    location: "Tour por Cubagua",
-    title: "Playas Paradisíacas",
-    description:
-      "Descubre las cristalinas aguas y hermosas playas de esta isla histórica del Caribe.",
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6",
-    location: "Aventura en Los Roques",
-    title: "Archipiélago Tropical",
-    description:
-      "Explora uno de los paraísos más exclusivos del Caribe con sus aguas turquesas.",
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1559825481-12a05cc00344",
-    location: "Isla de Margarita",
-    title: "Perla del Caribe",
-    description:
-      "Vive la experiencia única de las mejores playas y la cultura vibrante de Margarita.",
-  },
-];
+export default function ToursSection() {
+  const [tours, setTours] = useState([]);
+  useEffect(() => {
+    getTours().then((res) => {
+      setTours(res);
+    });
+  }, []);
 
-export default async function ToursSection() {
-  const tours = await getTours();
   return (
     <section className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
       <div className="text-center mb-12">
@@ -44,7 +26,7 @@ export default async function ToursSection() {
           >
             {/* Imagen */}
             <img
-              src={`${process.env.STRAPI_HOST_URL}/${tour.image[0].formats.thumbnail.url}`}
+              src={`${process.env.NEXT_PUBLIC_STRAPI_HOST_URL}${tour.image[0].url}`}
               alt={tour.title}
               className="w-full h-[400px] object-cover"
             />
@@ -60,7 +42,9 @@ export default async function ToursSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-lime-500/90 via-lime-800/70 to-transparent translate-y-1/2 group-hover:translate-y-0 transition-transform duration-500">
               <div className="absolute bottom-0 p-6 text-white">
                 <h3 className="text-xl font-bold mb-2">{tour.title}</h3>
-                <p className="text-gray-200">{tour.description}</p>
+                <div className="text-gray-200">
+                  <BlocksRenderer content={tour.description} />
+                </div>
               </div>
             </div>
           </div>
