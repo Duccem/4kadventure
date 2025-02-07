@@ -34,7 +34,6 @@ export default function HeroSection() {
                                         Discover the captivating charm of the Wonders of the Caribbean, from impressive tropical landscapes to a vibrant culture, on an unforgettable journey through the Caribbean paradise.
                                     </p>
                                 </div>
-
                                 <Button size="lg" className="group flex items-center gap-2 bg-[#E6E6FA] rounded-xl text-black hover:bg-white font-bold">
                                     Booking Now
                                     <ChevronDown className="h-4 w-4 rotate-[-90deg] transition-transform group-hover:translate-x-1" />

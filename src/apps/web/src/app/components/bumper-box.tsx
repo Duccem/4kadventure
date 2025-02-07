@@ -1,7 +1,7 @@
 export default function BumperBox() {
     const prueba = "https://images.mnstatic.com/8b/ec/8becb65d0398be67e806c1cf54eccbb6.jpg?width=2048"
     return (
-        <div className="flex flex-row justify-center items-center mx-auto px-5">
+        <div className="flex flex-row justify-center items-center mx-auto">
             <div className="flex flex-col justify-center items-center w-1/2 px-8 py-32 h-[450px] relative overflow-hidden rounded-l-xl"
                 style={{
                     backgroundImage: `url(${prueba})`,

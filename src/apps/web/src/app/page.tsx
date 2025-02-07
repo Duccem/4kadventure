@@ -10,10 +10,15 @@ export default function Home() {
     <div>
       <HeroSection />
       <DestinationsSection />
-      <BumperBox />
+      <div className="container mx-auto px-4 my-10">
+        <BumperBox />
+      </div>
       <TestimonialSection />
-      <Plans />
+      <div className="container mx-auto px-4 my-10">
+        <Plans />
+      </div>
       <Footer />
+
 
     </div>
   );

@@ -4,7 +4,7 @@ const nextConfig = {
         domains: [
             'images.mnstatic.com'
         ], 
-      },
+    },
 };
 
 export default nextConfig;
