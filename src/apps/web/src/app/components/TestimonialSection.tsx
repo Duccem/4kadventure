@@ -24,6 +24,7 @@ export default function TestimonialSection() {
     };
 
     return (
+
         <section className="py-16 px-4">
             <div className="container mx-auto">
                 <h2 className="text-center text-gray-600 text-3xl md:text-4xl font-medium mb-12">What Our Guests Have Said</h2>

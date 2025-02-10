@@ -1,7 +1,6 @@
 'use client';
 
-import { ChevronDown, Instagram, Link, Twitter, Youtube } from "lucide-react";
-
+import { ChevronDown } from "lucide-react";
 import { Button } from '@4k/ui/components/ui/button'
 import Header from "./headers";
 
@@ -12,7 +11,7 @@ export default function HeroSection() {
    
 
             <div
-                className=""
+                className="rounded-b-xl"
                 style={{
                     backgroundImage: `url(${backgroundImageUrl})`,
                     backgroundSize: 'cover',
@@ -20,14 +19,14 @@ export default function HeroSection() {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className="">
+                <div className="container">
                     <Header />
                 </div>
                 <div className="flex container mx-auto px-4 py-12 ">
                     <div className="flex justify-between items-center p-8">
                         <div className="relative z-10 flex min-h-screen flex-col justify-between px-6 pb-12 pt-32">
                             <div className="max-w-3xl">
-                                <h1 className="mb-6 text-5xl font-bold leading-tight text-[#FF9A8B] md:text-6xl lg:text-7xl">
+                                <h1 className="mb-6 text-5xl font-bold leading-tight text-[#E6E6FA] md:text-6xl lg:text-7xl">
                                     Weaving Your Dreams into Unforgettable Adventures
                                 </h1>
                                 <div className="w-1/2">
@@ -35,8 +34,7 @@ export default function HeroSection() {
                                         Discover the captivating charm of the Wonders of the Caribbean, from impressive tropical landscapes to a vibrant culture, on an unforgettable journey through the Caribbean paradise.
                                     </p>
                                 </div>
-
-                                <Button size="lg" className="group flex items-center gap-2 bg-[#FF9A8B] rounded-xl text-black hover:bg-white font-bold">
+                                <Button size="lg" className="group flex items-center gap-2 bg-[#E6E6FA] rounded-xl text-black hover:bg-white font-bold">
                                     Booking Now
                                     <ChevronDown className="h-4 w-4 rotate-[-90deg] transition-transform group-hover:translate-x-1" />
                                 </Button>
