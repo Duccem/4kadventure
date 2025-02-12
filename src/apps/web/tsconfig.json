@@ -1,6 +1,7 @@
 {
   "extends": "@4k/typescript-config/nextjs.json",
   "compilerOptions": {
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -9,7 +10,8 @@
       "@4k/*": [
         "../../packages/*"
       ]
-    }
+    },
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
@@ -19,4 +21,7 @@
     ".next/types/**/*.ts",
     "../../packages/ui/components/ui/button.tsx"
   ],
+  "exclude": [
+    "node_modules"
+  ]
 }
