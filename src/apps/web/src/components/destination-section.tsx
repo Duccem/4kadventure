@@ -1,19 +1,19 @@
 import Image from "next/image"
 import tirano from '@/src/assets/tirano.jpg'
 import { ArrowUpRight } from "lucide-react";
+import { getI18n } from "../locales/server";
 
-export default function DestinationsSection() {
+export default async function DestinationsSection() {
+    const t = await getI18n();
     return (
-        <section className="mx-auto px-16 py-12 ">
+        <section className="mx-auto px-8 md:px-16 py-12 ">
             <div className="space-y-2 mb-8">
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">[Destinations]</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wide">[{t('destinations.label')}]</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
-                    A unique mixture of adventure,
-                    <br />
-                    Natural culture and wonders
+                    {t('destinations.title')}
                 </h2>
                 <p className="text-muted-foreground max-w-[600px]">
-                    Discover a fusion of adventure, culture and scenic beauty in our various destinations, offering unforgettable experiences in each step.
+                    {t('destinations.subtitle')}
                 </p>
             </div>
 
@@ -29,13 +29,13 @@ export default function DestinationsSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 p-6 text-white flex justify-between items-center w-full">
                         <div>
-                            <h3 className="text-2xl font-semibold mb-2">Varadero Beach</h3>
+                            <h3 className="text-2xl font-semibold mb-2">{t('destinations.images.1.title')}</h3>
                             <p className="text-sm text-gray-200 max-w-[600px]">
-                                One of those destinations that captivate visitors with their beauty and tranquility, ideal for those looking for a shelter away from bustle. Throughout the week, travelers enjoy the serenity it offers, perfect to relax in the sun and enjoy a good book.
+                                {t('destinations.images.1.description')}
                             </p>
                         </div>
                         <div className="hidden md:flex bg-white text-black justify-between w-[200px] py-2 items-center gap-4 px-4 rounded-full cursor-pointer hover:-translate-x-1 hover:-translate-y-1 transition-all">
-                            <p className="text-xl font-medium">Explore</p>
+                            <p className="text-xl font-medium">{t('destinations.cta')}</p>
                             <div className="rounded-full bg-neutral-900 text-white p-3">
                                 <ArrowUpRight className="size-6" />
                             </div>
@@ -54,9 +54,9 @@ export default function DestinationsSection() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute bottom-0 p-6 text-white">
-                            <h3 className="text-xl font-semibold mb-2">El Yaque Beach</h3>
+                            <h3 className="text-xl font-semibold mb-2">{t('destinations.images.2.title')}</h3>
                             <p className="text-sm text-gray-200">
-                                A true paradise that loves those who visit it. Travelers highlight their bluish sea and the vibrant atmosphere that is breathed in the place.
+                                {t('destinations.images.2.description')}
                             </p>
                         </div>
                     </div>
@@ -69,9 +69,9 @@ export default function DestinationsSection() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute bottom-0 p-6 text-white">
-                            <h3 className="text-xl font-semibold mb-2">El Tirano beach</h3>
+                            <h3 className="text-xl font-semibold mb-2">{t('destinations.images.3.title')}</h3>
                             <p className="text-sm text-gray-200">
-                                Es una playa que no deja indiferente a quienes la visitan. Su hermoso entorno, adornado por un sol radiante y aguas cristalinas, facilita un ambiente propicio para la vida económica y cultural local.
+                                {t('destinations.images.3.description')}
                             </p>
                         </div>
                     </div>

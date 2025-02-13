@@ -3,9 +3,11 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupConte
 import Link from 'next/link';
 import Locale from './locale';
 import logo from '@/src/assets/4k_logo.jpeg'
+import { useI18n } from '@/src/locales/client';
 
 
 const SideBarApp = () => {
+  const t = useI18n();
   return (
     <Sidebar>
       <SidebarHeader >
@@ -25,9 +27,17 @@ const SideBarApp = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
+                  <Link href={'/'} className="p-3 w-full">
+
+                    <span>{t("nav.home")}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
                   <Link href={'/destinations'} className="p-3 w-full">
 
-                    <span>Destinations</span>
+                    <span>{t("nav.destinations")}</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -35,7 +45,7 @@ const SideBarApp = () => {
                 <SidebarMenuButton asChild>
                   <Link href={'/gallery'} className="p-3 w-full">
 
-                    <span>Gallery</span>
+                    <span>{t("nav.gallery")}</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
