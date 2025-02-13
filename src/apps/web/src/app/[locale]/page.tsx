@@ -4,18 +4,18 @@ import DestinationsSection from "../../components/destination-section";
 import Footer from "../../components/footers";
 import HeroSection from "../../components/hero-sections";
 import Next from "@/src/components/next";
+import { getNextTours } from "@/src/actions/get-next-tours";
 
-export default function Home() {
+export default async function Home() {
+  const tours = await getNextTours();
   return (
     <div className="">
       <HeroSection />
       <About />
       <DestinationsSection />
-      <Next />
+      <Next tours={tours} />
       <Why />
       <Footer />
-
-
     </div>
   );
 }

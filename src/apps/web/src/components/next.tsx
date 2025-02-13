@@ -1,9 +1,10 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@4k/ui/components/ui/carousel';
-import image from '@/src/assets/hero.jpg';
+
 import Link from 'next/link';
 import { ArrowUpRight, Calendar, Users } from 'lucide-react';
 import { getI18n } from '../locales/server';
-const Next = async () => {
+import { RichText } from './rich-text';
+const Next = async ({ tours }: { tours: any[] }) => {
   const t = await getI18n();
   return (
     <div className="min-h-screen py-10 px-16 space-y-8">
@@ -16,34 +17,30 @@ const Next = async () => {
       <div className=''>
         <Carousel className='mt-32'>
           <CarouselContent>
-            {Array.from({ length: 3 }).map((_, index) => (
+            {tours.map((tour, index) => (
               <CarouselItem key={index}>
                 <div className="flex flex-col md:flex-row items-start justify-between  gap-3">
                   <div className='md:w-1/2 rounded-xl overflow-hidden'>
-                    <img src={image.src} alt="" />
+                    <img src={`${process.env.STRAPI_HOST_URL}${tour.Fotos[0].url}`} alt="" className='object-cover' />
                   </div>
                   <div className='md:w-1/2 flex flex-col gap-4 md:px-8'>
                     <p className='text-4xl font-medium'>
-                      Los Roques, Venezuela
+                      {tour.Destination}
                     </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nulla quam velit, vulputate eu pharetra nec, mattis ac
-                      neque.
-                    </p>
+                    <RichText content={tour.Description} />
                     <div className='flex items-center gap-4'>
                       <Calendar className='size-6' />
                       <p className='text-xl'>
-                        2025-12-12
+                        {tour.Date}
                       </p>
                     </div>
                     <p className='text-2xl font-medium'>
-                      $50 - $100
+                      ${tour.Price}
                     </p>
                     <div className='flex items-center gap-4'>
                       <Users className='size-6' />
                       <p className='text-xl'>
-                        20/50 spots left
+                        {tour.Spots} spots available
                       </p>
                     </div>
                     <div className='w-fit'>
