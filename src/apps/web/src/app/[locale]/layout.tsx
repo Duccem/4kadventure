@@ -4,6 +4,7 @@ import "./globals.css";
 import { Montserrat } from 'next/font/google';
 import { Providers } from "./provider";
 import Header from "@/src/components/headers";
+import Footer from "@/src/components/footers";
 const nunito = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default async function RootLayout({
           <div className="min-h-screen bg-background overflow-hidden md:overflow-visible relative">
             {children}
           </div>
+          <Footer />
         </Providers>
       </body>
     </html>

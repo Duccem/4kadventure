@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import logo from '@/src/assets/4k_logo.jpeg'
+import { getI18n } from '../locales/server';
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getI18n();
   return (
-    <footer className="px-16 md:py-16 lg:py-24  py-10 md:pt-16 overflow-hidden md:max-h-[820px]">
+    <footer className="px-8 md:px-16 md:py-16 lg:py-24  py-10 md:pt-16 overflow-hidden md:max-h-[820px]">
       <div className="">
         <div className="flex justify-between items-center border-border border-b-[1px] pb-10 md:pb-16 mb-12">
           <div className='w-1/2'>
             <h3 className='mb-6 text-xl font-bold leading-tight text-black md:text-6xl lg:text-5xl'>
-              Explore Nature's
-              <span className="text-gray-400"> Wonders with Expert Guidance</span>
+              {t('footer.text1')}
+              <span className="text-gray-400"> {t('footer.text2')}</span>
             </h3>
           </div>
 
