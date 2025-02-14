@@ -5,6 +5,7 @@ import { Montserrat } from 'next/font/google';
 import { Providers } from "./provider";
 import Header from "@/src/components/headers";
 import Footer from "@/src/components/footers";
+import Whatsapp from "@/src/components/atoms/whatsapp";
 const nunito = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default async function RootLayout({
       <body className={`${nunito.className} antialiased relative`} suppressHydrationWarning>
         <Providers locale={locale}>
           <Header />
+          <Whatsapp />
           <div className="min-h-screen bg-background overflow-hidden md:overflow-visible relative">
             {children}
           </div>
