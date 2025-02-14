@@ -28,7 +28,7 @@ export default {
     title: "Una mezcla única de aventura, cultura natural y maravillas",
     subtitle:
       "Descubre una fusión de aventura, cultura y belleza escénica en nuestros diversos destinos, ofreciendo experiencias inolvidables en cada paso.",
-    cta: "Descubre más",
+    cta: "Descubre",
     images: {
       1: {
         title: "Playa Varadero",
