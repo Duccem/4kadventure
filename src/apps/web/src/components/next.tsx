@@ -19,7 +19,7 @@ const Next = async ({ tours }: { tours: any[] }) => {
           <CarouselContent>
             {tours.map((tour, index) => (
               <CarouselItem key={index}>
-                <div className="flex flex-col md:flex-row items-start justify-between  gap-3">
+                <div className="flex flex-col md:flex-row items-start justify-between gap-3">
                   <div className='md:w-1/2 rounded-xl overflow-hidden'>
                     <img src={`${process.env.STRAPI_HOST_URL}${tour.Fotos[0].url}`} alt="" className='object-cover' />
                   </div>
