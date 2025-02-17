@@ -2,9 +2,9 @@
 
 import { query } from "../lib/api/strapi";
 
-export async function getDestinationId(id: number) {
-    const queryString = `destinations?populate=*&filters[id]=${id}`;
-    const data = await query(queryString);
+export async function getDestinationId(id: string) {
+  const queryString = `tours/${id}?populate=*`;
+  const data = await query(queryString);
 
-    return data.data;
+  return data.data;
 }
