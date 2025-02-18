@@ -90,4 +90,19 @@ export default {
     text1: "Explora las Maravillas de ",
     text2: "la Naturaleza con Guía Experta",
   },
+  destination: {
+    hero: {
+      title: "Descubre el mundo con nosotros",
+      subtitle: "Viaja a los lugares más hermosos del mundo",
+    },
+    filter: {
+      title: "Próximos tours",
+      subtitle: "Filtra los tours que deseas ver",
+      labels: {
+        startDate: "Fecha de inicio",
+        endDate: "Fecha de finalización",
+        clear: "Limpiar",
+      },
+    },
+  },
 } as const;

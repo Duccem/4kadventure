@@ -8,8 +8,10 @@ const CardDestination = async ({
 }: {
   startDate: string;
   endDate: string;
+  locale: string;
 }) => {
-  const destinations = await getTours(startDate, endDate);
+  const destinations = await getTours(startDate, endDate, locale);
+  const locale = await getCurre;
   return (
     <>
       <div className="grid grid-cols-1  md:grid-cols-3 gap-6 ">

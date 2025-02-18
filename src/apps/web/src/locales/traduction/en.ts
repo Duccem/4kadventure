@@ -90,4 +90,19 @@ export default {
     text1: "Explore Nature's",
     text2: "Wonders with Expert Guidance",
   },
+  destination: {
+    hero: {
+      title: "Discover the world with us",
+      subtitle: "Travel to the most beautiful places in the world",
+    },
+    filter: {
+      title: "Next tours",
+      subtitle: "Filter the tours that you wanna see",
+      labels: {
+        startDate: "Start Date",
+        endDate: "End Date",
+        clear: "Clear",
+      },
+    },
+  },
 } as const;
