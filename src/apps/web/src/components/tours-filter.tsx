@@ -1,14 +1,14 @@
 "use client";
 import { DatePicker } from "@4k/ui/components/ui/date-picker";
-import { parseAsIsoDate, useQueryState, useQueryStates } from "nuqs";
+import { parseAsIsoDate, useQueryStates } from "nuqs";
 import { Button } from "@4k/ui/components/ui/button";
 import { X } from "lucide-react";
 
 const ToursFilter = () => {
   const [dates, setDates] = useQueryStates(
     {
-      startDate: parseAsIsoDate.withDefault(null),
-      endDate: parseAsIsoDate.withDefault(null),
+      startDate: parseAsIsoDate,
+      endDate: parseAsIsoDate,
     },
     {
       shallow: false,
@@ -23,12 +23,12 @@ const ToursFilter = () => {
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 ">
         <DatePicker
           onSelect={(d) => setDates({ ...dates, startDate: d! })}
-          selected={dates.startDate}
+          selected={dates.startDate ?? undefined}
           placeholder="Start Date"
         />
         <DatePicker
           onSelect={(d) => setDates({ ...dates, endDate: d! })}
-          selected={dates.endDate}
+          selected={dates.endDate ?? undefined}
           placeholder="End Date"
         />
 
